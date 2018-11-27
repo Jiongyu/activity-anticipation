@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="gui" default="true" />
+  
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find mr_description)/robots/climbot5d.urdf'" /> 
+  
+  <node name="set_rosparam_joint_names" pkg="modular_robot_control" type="rosparam_set_joint_names.py"/>
+    <rosparam>
+    dependent_joints:
+      G6_Joint1: {parent: G6_Joint, factor: 1 }
+      G0_Joint1: {parent: G0_Joint, factor: 1 }
+    </rosparam>
+
+  <node name="generate_pole" pkg="climb_robot_control" type="generate_pole"/>
+
+   <node name="static_world_A_broadcaster" pkg="climb_robot_control" type="static_world_A_broadcaster" args="base_gripper1 0 0 0 0 0 0"/>
+
+  <node name="publish_joint_state" pkg="climb_robot_control" type="publish_joint_state"/>
+
+  <node name="change_base_link" pkg="climb_robot_control" type="change_base_link"/>
+  
+  <node name="climbot_commander" pkg="joint_state_publisher" type="joint_state_publisher" >
+      <param name="use_gui" value="false"/>
+	    <param name="publish_frequency" type="double" value="10.0" />
+      <rosparam param="source_list">["/climbot5d/joint_command"]</rosparam>
+  </node>
+
+  <node name="climbot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mr_description)/rviz/climbot.rviz" if="$(arg gui)" />
+</launch>

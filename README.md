@@ -5,11 +5,4 @@ Welcome to the GDUT BIRL Robotics Github page. In this section you will find tut
 https://github.com/birlrobotics/birl_baxter/wiki
 
 Thank you!!
-
-
-
-
-# activity-anticipation
-  This ros package is to show the SRNN prediction about some human activity useing the CAD120 dataset.
-  If you want to get more information ,please access : http://pr.cs.cornell.edu/humanactivities/.
   

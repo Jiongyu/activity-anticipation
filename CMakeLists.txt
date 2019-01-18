@@ -2,24 +2,19 @@ cmake_minimum_required(VERSION 2.8.3)
 project(activity-anticipation)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
- add_compile_options(-std=c++11)
+# add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-sensor_msgs
-cv_bridge
-roscpp
-std_msgs
-image_transport
+  cv_bridge
+  rospy
+  sensor_msgs
+  std_msgs
 )
 
-find_package(OpenCV)
-include_directories(${OpenCV_INCLUDE_DIRS})
-#target_link_libraries(my_awesome_library ${OpenCV_LIBRARIES})
-
-# System dependencies are found with CMake's conventions
+## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
 
@@ -76,7 +71,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
+#   sensor_msgs#   std_msgs
 # )
 
 ################################################
@@ -111,7 +106,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES activity-anticipation
-#  CATKIN_DEPENDS rospy
+#  CATKIN_DEPENDS cv_bridge opencv2 rospy rospy sensor_msgs std_msgs
 #  DEPENDS system_lib
 )
 
@@ -139,7 +134,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
- #add_executable(having_meal src/activity-anticipation/src/having_meal.cpp)
+# add_executable(${PROJECT_NAME}_node src/activity-anticipation_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

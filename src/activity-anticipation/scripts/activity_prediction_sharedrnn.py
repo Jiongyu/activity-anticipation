@@ -21,7 +21,7 @@ def predict_activitiy(index,fold,checkpoint,architecture='joint'):
 	#path_to_dataset = '/scr/ashesh/activity-anticipation/dataset/{0}'.format(fold)
 	#path_to_checkpoints = '/scr/ashesh/activity-anticipation/checkpoints/{0}'.format(fold)
 	path_to_dataset = './src/activity-anticipation/src/activity-anticipation/dataset/{0}'.format(fold)
-	path_to_checkpoints = './src/activity-anticipation/src/activity-anticipation/checkpoints_anticipation/{0}'.format(fold)
+	path_to_checkpoints = './src/activity-anticipation/src/activity-anticipation/checkpoints/{0}'.format(fold)
 	path_to_prediction = './src/activity-anticipation/src/activity-anticipation/prediction/{0}'.format(fold)
 
 	test_data = cPickle.load(open('{1}/test_data_{0}.pik'.format(index,path_to_dataset)))	
@@ -139,9 +139,12 @@ if __name__ == "__main__":
 	#pdb.set_trace()
 	index = sys.argv[1]	
 	#fold = sys.argv[2]
+	
+	#you could change the number according to the train
 	checkpoint = 149
-	#folds = ['1','2','3','4']
-	#architecture='joint'
+	folds = ['1','2','3','4']
+	
+	#you could change the architecture according to the train architecture
 	architecture='anticipation'
 	#architecture='detection'
 
@@ -159,7 +162,6 @@ if __name__ == "__main__":
 
 	print "Using {0} architecture".format(architecture)
 	#print "************* Checkpoint {0} ************".format(checkpoint)
-	folds = ['1','2','3','4']
 	err_detection = []
 	err_anticipation = []
 	for fold,checkpoint in zip(folds,checkpoints):

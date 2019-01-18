@@ -145,7 +145,7 @@ if __name__ == '__main__':
 		print 'human features dim ',inputHumanFeatures
 		print 'object features dim ',inputObjectFeatures
 
-		#epochs = 300
+		#epochs determine the number of the checkpoint files
 		epochs = 150
 		batch_size = X_tr_human_disjoint.shape[1]
 		learning_rate_decay = 0.97
@@ -155,7 +155,8 @@ if __name__ == '__main__':
 		train_more = False
 
 		architectures = ['detection','anticipation','joint']
-
+		
+		# you could choose the train mode
 		train_for = 1
 		#train_for = 'current_prediction'
 

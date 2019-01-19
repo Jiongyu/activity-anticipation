@@ -1,7 +1,6 @@
 Dear all,
 
-Welcome to the GDUT BIRL Robotics Github page. In this section you will find tutorials, code, and videos that show our work. Please refer to our wiki page for all the details:
-
+This package is to dispaly the prediction about the human activity with SRNN. you could get the more information about this package as below:
 
 https://github.com/Jiongyu/activity-anticipation/wiki
 

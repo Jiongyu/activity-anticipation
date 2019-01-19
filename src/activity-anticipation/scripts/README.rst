@@ -27,18 +27,30 @@ read_pik_file.py is an example to read the pik file.
 example :
  After I run the read_pik_file.py, there are some consquence below about the '0510182057'acitvity  which locate in the 9 line about the activity/fold_3/fold3 file. 
  
- truth_human:
-[9 1 2 5 2 7 1 2 4 2 7 9 1 2 5 2 7]
-detect_human
-[[9 1 2 5 2 7 2 2 5 2 7 2 7 2 5 2 7]]
-anticipation_human
-[[ 1  2  5  2  7 11  2  7  1  7  1  7  1  5  2  7 11]]
-truth_object
-[[ 2  2  2  3  1 12  1  9  2  2]]
-detect_object
-[[2 2 2 2 2 2 1 9 2 2]]
-anticipation_object
-[[ 2  2  2  2  2  2  9  2  2 13]]
+ 
+	truth_human:
+	
+	[9 1 2 5 2 7 1 2 4 2 7 9 1 2 5 2 7]
+	
+	detect_human
+	
+	[[9 1 2 5 2 7 2 2 5 2 7 2 7 2 5 2 7]]
+	
+	anticipation_human
+	
+	[[ 1  2  5  2  7 11  2  7  1  7  1  7  1  5  2  7 11]]
+	
+	truth_object
+	
+	[[ 2  2  2  3  1 12  1  9  2  2]]
+	
+	detect_object
+	
+	[[2 2 2 2 2 2 1 9 2 2]]
+	
+	anticipation_object
+	
+	[[ 2  2  2  2  2  2  9  2  2 13]]
 
 so,you could change the fold_3 folds and fold3 files to choose the another activity  to get the prediction consquence.
 

@@ -29,17 +29,17 @@ def main():
 	anticipation_object = anticipation_object_data[8].T
 
     print 'truth_human:'
-	print truth_human
+    print truth_human
     print 'detect_human'
-	print detect_human
+    print detect_human
     print 'anticipation_human'
-	print anticipation_human
-	print 'truth_object'
-	print truth_object
+    print anticipation_human
+    print 'truth_object'
+    print truth_object
     print 'detect_object'
-	print detect_object
+    print detect_object
     print 'anticipation_object'
-	print anticipation_object
+    print anticipation_object
 
 
 main()
